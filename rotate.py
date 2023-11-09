@@ -86,7 +86,7 @@ def main(input_pdf, output_pdf):
             output_pdf_document[-1].insert_image(existing_image_rect, pixmap=corrected_pixmap)
 
     # Save the new PDF document with corrected images
-    output_pdf_document.save(output_pdf)
+    output_pdf_document.save(output_pdf, garbage=3, deflate=True)
     output_pdf_document.close()
 
     # Close the original PDF document
